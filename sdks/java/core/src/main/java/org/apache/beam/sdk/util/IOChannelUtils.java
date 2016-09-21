@@ -31,6 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.beam.sdk.options.GcsOptions;
 import org.apache.beam.sdk.options.PipelineOptions;
+import org.apache.beam.sdk.options.S3Options;
 
 /**
  * Provides utilities for creating read and write channels.
@@ -63,6 +64,7 @@ public class IOChannelUtils {
   public static void registerStandardIOFactories(PipelineOptions options) {
     setIOFactory("gs", new GcsIOChannelFactory(options.as(GcsOptions.class)));
     setIOFactory("file", new FileIOChannelFactory());
+    setIOFactory("s3", new S3IOChannelFactory(options.as(S3Options.class)));
   }
 
   /**
