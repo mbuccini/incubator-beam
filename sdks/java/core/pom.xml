@@ -571,5 +571,12 @@
       <artifactId>google-cloud-dataflow-java-proto-library-all</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- To use AWS S3 File channel -->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk</artifactId>
+      <version>1.11.35</version>
+    </dependency>
   </dependencies>
 </project>
